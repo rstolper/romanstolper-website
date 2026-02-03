@@ -1,71 +1,12 @@
 <html>
-
-<head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-</head>
-
-<body style="background-image:url('images/background_fancymesh.png'); background-repeat:repeat;">
-		
-	<h1>
-	   Hello!
-	</h1>
-    <p>
-	   Welcome to the website of Roman Stolper
-    </p>
-    <p>
-	   <a href="rateeverything/#">My "Rate Everything" application</a>
-    </p>
-	<p>
-	   <a href="programming_jokes_i_like.html">List of programming jokes I like</a>
-    </p>
-	<p>
-	   <a href="words_i_like.html">List of words I like</a>
-	</p>
-	<p><a href="https://nazarovoagro.ru">Where my website used to route after asmallorange hosting got bought</a></p>
-    <hr>
-    
-    Choose a background: 
-    <select id="backgroundSelector">
-	</select>
-		
-	<script>
-        function readFile(file, callback)
-        {
-            var rawFile = new XMLHttpRequest();
-            rawFile.open("GET", file, true);
-            rawFile.onreadystatechange = function ()
-            {
-                if(rawFile.readyState === 4)
-                {
-                    if(rawFile.status === 200 || rawFile.status == 0)
-                    {
-                        var allText = rawFile.responseText;
-                        callback(allText);
-                    }
-                }
-            }
-            rawFile.send(null);
-        }
-
-        function parseDirectoryList(text)
-        {
-            $(text).children().each(function( index ) {
-                var filename = $.trim($( this ).text());
-                $("#backgroundSelector").append("<option value='"+filename+"'>"+filename+"</option>");
-            });
-        }
-
-        // get the image list
-        readFile('images', parseDirectoryList);
-
-        // attach click handler to set button
-        $( "#backgroundSelector" ).change(function() {
-           var filename = $("#backgroundSelector").val();
-           var bgUrl = 'url("images/'+filename+'")';
-           $("body").css("background-image", bgUrl);
-        });
-
-	</script>
-</body>
-
+	<body style="background-color:lavender">
+		<h1>Hello!</h1>
+	    <p>
+			Welcome to the website of Roman Stolper
+	    </p>
+		<p>
+			Are you looking for <a href="https://nazarovoagro.ru">Назарово Агро</a>? This domain name "romanstolper.com" 
+			somehow accidentally redirected there for a while after the hosting site "A Small Orange" went out of business.
+		</p>
+	</body>
 </html>
